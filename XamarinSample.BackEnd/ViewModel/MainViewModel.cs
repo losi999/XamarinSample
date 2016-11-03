@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Ioc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,11 @@ namespace XamarinSample.BackEnd.ViewModel {
 
         private readonly INavigationService navigationService;
 
+        public MainViewModel() {
+
+        }
+
+        [PreferredConstructor]
         public MainViewModel(INavigationService navigationService) {
             this.navigationService = navigationService;
         }

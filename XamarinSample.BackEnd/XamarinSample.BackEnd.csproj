@@ -13,7 +13,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,6 +40,16 @@
     <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\XamarinSample.Core\XamarinSample.Core.csproj">
+      <Project>{84296155-5743-4C11-84BF-77F12F9FA531}</Project>
+      <Name>XamarinSample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XamarinSample.Persistence\XamarinSample.Persistence.csproj">
+      <Project>{a0cb5dd9-7d8b-4531-915d-6e2906ce52ba}</Project>
+      <Name>XamarinSample.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10\GalaSoft.MvvmLight.dll</HintPath>
       <Private>True</Private>
@@ -59,17 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\XamarinSample.Core\XamarinSample.Core.csproj">
-      <Project>{84296155-5743-4C11-84BF-77F12F9FA531}</Project>
-      <Name>XamarinSample.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XamarinSample.Persistence\XamarinSample.Persistence.csproj">
-      <Project>{a0cb5dd9-7d8b-4531-915d-6e2906ce52ba}</Project>
-      <Name>XamarinSample.Persistence</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
