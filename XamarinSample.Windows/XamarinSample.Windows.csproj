@@ -136,6 +136,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\XamarinSample.BackEnd\XamarinSample.BackEnd.csproj">
+      <Project>{3A39FAA9-7D43-4D1F-88EF-3EE810E9BDB9}</Project>
+      <Name>XamarinSample.BackEnd</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XamarinSample.Core\XamarinSample.Core.csproj">
       <Project>{84296155-5743-4c11-84bf-77f12f9fa531}</Project>
       <Name>XamarinSample.Core</Name>

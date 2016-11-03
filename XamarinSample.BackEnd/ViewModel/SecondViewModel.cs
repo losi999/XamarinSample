@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Views;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,16 +10,16 @@ using System.Threading.Tasks;
 using XamarinSample.Core.Model.JsonModels;
 using XamarinSample.Core.Services;
 
-namespace XamarinSample.Core.ViewModel {
+namespace XamarinSample.BackEnd.ViewModel {
     public class SecondViewModel : ViewModelBase {
-        private readonly Services.INavigationService navigationService;
-        private readonly IDialogService dialogService;
+        private readonly INavigationService navigationService;
+        private readonly GalaSoft.MvvmLight.Views.IDialogService dialogService;
         private readonly IWebService webService;
         private readonly IFileService fileService;
 
         public SecondViewModel(
-            Services.INavigationService navigationService,
-            IDialogService dialogService,
+            INavigationService navigationService,
+            GalaSoft.MvvmLight.Views.IDialogService dialogService,
             IWebService webService,
             IFileService fileService) {
 
@@ -52,7 +51,7 @@ namespace XamarinSample.Core.ViewModel {
 
         public RelayCommand CommandJson => new RelayCommand(new Action(async () => {
             var json = await webService.Get("http://szeged-ebed.rhcloud.com/?controller=api&action=index&day=2016-10-26");
-            fileService.Write("json.txt", JsonConvert.SerializeObject(json));
+            await fileService.Write("json.txt", JsonConvert.SerializeObject(json));
         }));
     }
 }

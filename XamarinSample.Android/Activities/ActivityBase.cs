@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using GalaSoft.MvvmLight;
-using XamarinSample.Core.ViewModel;
+using XamarinSample.BackEnd.ViewModel;
 using GalaSoft.MvvmLight.Views;
 using GalaSoft.MvvmLight.Helpers;
 

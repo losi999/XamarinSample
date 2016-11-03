@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using XamarinSample.Core.Services;
-using XamarinSample.Core.ViewModel;
+using XamarinSample.BackEnd.ViewModel;
 using XamarinSample.Android.Activities;
 
 namespace XamarinSample.Android.Services {

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XamarinSample.BackEnd.ViewModel;
 using XamarinSample.Core.Services;
-using XamarinSample.Core.ViewModel;
 using XamarinSample.Windows.View;
 
 namespace XamarinSample.Windows.Services {

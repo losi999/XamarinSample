@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using XamarinSample.Core.Services;
 
-namespace XamarinSample.Core.ViewModel {
+namespace XamarinSample.BackEnd.ViewModel {
     public class MainViewModel : ViewModelBase {
 
         private readonly INavigationService navigationService;

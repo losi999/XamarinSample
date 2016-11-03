@@ -5,7 +5,7 @@ using GalaSoft.MvvmLight.Helpers;
 using XamarinSample.Android.Activities;
 using GalaSoft.MvvmLight;
 using System;
-using XamarinSample.Core.ViewModel;
+using XamarinSample.BackEnd.ViewModel;
 using System.Collections.Generic;
 using Android.Views;
 

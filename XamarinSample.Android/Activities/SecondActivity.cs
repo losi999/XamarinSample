@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using XamarinSample.Android.Activities;
-using XamarinSample.Core.ViewModel;
+using XamarinSample.BackEnd.ViewModel;
 using GalaSoft.MvvmLight.Helpers;
 
 namespace XamarinSample.Android.Activities {
