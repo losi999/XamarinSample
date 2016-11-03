@@ -1,0 +1,11 @@
+﻿<Application
+    x:Class="XamarinSample.WindowsPhone8.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:XamarinSample.BackEnd.ViewModel"
+    xmlns:local="using:XamarinSample.WindowsPhone8">
+    <Application.Resources>
+        <vm:ViewModelLocator
+            x:Name="Locator" />
+    </Application.Resources>
+</Application>

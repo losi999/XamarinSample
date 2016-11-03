@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="XamarinSample.WindowsPhone8.View.SecondPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.WindowsPhone8.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Second, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock
+            Text="SecondPage" />
+        <Button
+            Content="Dialog"
+            Command="{Binding CommandDialog}" />
+        <TextBlock
+            Text="{Binding DialogResponse}" />
+        <Button
+            Content="Download JSON"
+            Command="{Binding CommandJson}" />
+    </StackPanel>
+</Page>
