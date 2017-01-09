@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using XamarinSample.Core.Services;
-using XamarinSample.Persistence.Services;
+using XamarinSample.Common.Services;
 using XamarinSample.Windows81.Services;
 using XamarinSample.Windows81.View;
 

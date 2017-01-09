@@ -10,14 +10,15 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using XamarinSample.Android.Activities;
-using XamarinSample.BackEnd.ViewModel;
+using XamarinSample.ViewModel;
 using GalaSoft.MvvmLight.Helpers;
 using XamarinSample.Core.Model.ItemModels;
+using XamarinSample.Core.ViewModel;
 
 namespace XamarinSample.Android.Activities {
     [Activity(Label = "SecondActivity")]
-    public class SecondActivity : ActivityBase<SecondViewModel> {
-        protected override SecondViewModel ViewModel => App.Locator.Second;
+    public class SecondActivity : ActivityBase<ISecondViewModel> {
+        protected override ISecondViewModel ViewModel => App.Locator.Second;
 
         public Button buttonDialog => FindViewById<Button>(Resource.Id.buttonDialog);
         public Button buttonDownloadJson => FindViewById<Button>(Resource.Id.buttonDownloadJson);

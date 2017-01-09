@@ -10,24 +10,28 @@ using System.Threading.Tasks;
 using XamarinSample.Core.Model.ItemModels;
 using XamarinSample.Core.Model.JsonModels;
 using XamarinSample.Core.Services;
+using XamarinSample.Core.ViewModel;
+using GS = GalaSoft.MvvmLight.Views;
 
-namespace XamarinSample.BackEnd.ViewModel {
-    public class SecondViewModel : ViewModelBase {
-        private readonly INavigationService navigationService;
-        private readonly GalaSoft.MvvmLight.Views.IDialogService dialogService;
-        private readonly IWebService webService;
-        private readonly IFileService fileService;
+namespace XamarinSample.ViewModel {
+    public class SecondViewModel : ViewModelBase, ISecondViewModel {
+        private readonly INavigationService _navigationService;
+        private readonly GS.IDialogService _dialogService;
+        private readonly IWebService _webService;
+        private readonly IFileService _fileService;
 
         public SecondViewModel(
             INavigationService navigationService,
-            GalaSoft.MvvmLight.Views.IDialogService dialogService,
+            GS.IDialogService dialogService,
             IWebService webService,
             IFileService fileService) {
 
-            this.navigationService = navigationService;
-            this.dialogService = dialogService;
-            this.webService = webService;
-            this.fileService = fileService;
+            _navigationService = navigationService;
+            _dialogService = dialogService;
+            _webService = webService;
+            _fileService = fileService;
+
+            Restaurants = new ObservableCollection<RestaurantItemModel>();
         }
 
 
@@ -45,33 +49,22 @@ namespace XamarinSample.BackEnd.ViewModel {
         }
 
 
-        private ObservableCollection<RestaurantItemModel> _Restaurants;
-        public ObservableCollection<RestaurantItemModel> Restaurants {
-            get {
-                return _Restaurants ?? (_Restaurants = new ObservableCollection<RestaurantItemModel>());
-            }
-            set {
-                if (_Restaurants != value) {
-                    _Restaurants = value;
-                    RaisePropertyChanged(nameof(Restaurants));
-                }
-            }
-        }
+        public ObservableCollection<RestaurantItemModel> Restaurants { get; }
 
         public RelayCommand CommandDialog => new RelayCommand(new Action(() => {
-            dialogService.ShowMessage("message", "title", "ok", "cancel", new Action<bool>((result) => {
+            _dialogService.ShowMessage("message", "title", "ok", "cancel", new Action<bool>((result) => {
                 DialogResponse = result ? "Clicked ok" : "Clicked cancel";
             }));
         }));
 
         public RelayCommand CommandJson => new RelayCommand(new Action(async () => {
-            var json = await webService.Get("http://szeged-ebed.rhcloud.com/?controller=api&action=index&day=" + DateTime.Today.ToString("yyyy-MM-dd"));
+            var json = await _webService.Get("http://szeged-ebed.rhcloud.com/?controller=api&action=index&day=" + DateTime.Today.ToString("yyyy-MM-dd"));
 
             Restaurants.Clear();
             foreach (var r in json?.restaurants) {
                 Restaurants.Add(new RestaurantItemModel(r));
             }
-            fileService.Write("json.txt", JsonConvert.SerializeObject(json));
+            _fileService.Write("json.txt", JsonConvert.SerializeObject(json));
         }));
     }
 }

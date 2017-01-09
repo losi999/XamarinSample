@@ -8,7 +8,7 @@
   <mp:PhoneIdentity PhoneProductId="9a01bcdb-ff86-4fa8-bcbd-366c6d953dd2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>XamarinSample.WindowsPhone8</DisplayName>
+    <DisplayName>XamarinSample.WindowsPhone81</DisplayName>
     <PublisherDisplayName>Laszlo_Losonczi</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -25,12 +25,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="XamarinSample.WindowsPhone8.App">
+        EntryPoint="XamarinSample.WindowsPhone81.App">
         <m3:VisualElements
-            DisplayName="XamarinSample.WindowsPhone8"
+            DisplayName="XamarinSample.WindowsPhone81"
             Square150x150Logo="Assets\Logo.png"
             Square44x44Logo="Assets\SmallLogo.png"
-            Description="XamarinSample.WindowsPhone8"
+            Description="XamarinSample.WindowsPhone81"
             ForegroundText="light"
             BackgroundColor="transparent">
             <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png"/>

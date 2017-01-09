@@ -7,8 +7,8 @@
     <ProjectGuid>{EE266170-5A69-4E3C-AF57-9B5142B5E80D}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XamarinSample.WindowsPhone8</RootNamespace>
-    <AssemblyName>XamarinSample.WindowsPhone8</AssemblyName>
+    <RootNamespace>XamarinSample.WindowsPhone81</RootNamespace>
+    <AssemblyName>XamarinSample.WindowsPhone81</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>

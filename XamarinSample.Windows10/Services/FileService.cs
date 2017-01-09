@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using XamarinSample.Core.Services;
 
-namespace XamarinSample.Windows.Services {
+namespace XamarinSample.Windows10.Services {
     public class FileService : IFileService {
         public async Task Write(string fileName, string content) {
             StorageFolder folder = ApplicationData.Current.LocalFolder;

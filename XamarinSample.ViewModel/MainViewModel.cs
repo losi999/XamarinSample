@@ -7,33 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XamarinSample.Core.Services;
+using XamarinSample.Core.ViewModel;
 
-namespace XamarinSample.BackEnd.ViewModel {
-    public class MainViewModel : ViewModelBase {
+namespace XamarinSample.ViewModel {
+    public class MainViewModel : ViewModelBase, IMainViewModel {
 
-        private readonly INavigationService navigationService;
+        private readonly INavigationService _navigationService;
 
-        public MainViewModel() {
-
-        }
-
-        [PreferredConstructor]
         public MainViewModel(INavigationService navigationService) {
-            this.navigationService = navigationService;
+            _navigationService = navigationService;
         }
 
 
-        public RelayCommand CommandClick => new RelayCommand(new Action(() => {
-            Count++;
-        }));
+        private RelayCommand _CommandClick;
+        public RelayCommand CommandClick => _CommandClick ??
+            (_CommandClick = new RelayCommand(() => {
+                Count++;
+            }));
 
-
-        public RelayCommand CommandSecondPage => new RelayCommand(new Action(() => {
-            navigationService.NavigateToSecond();
-        }));
+        private RelayCommand _CommandSecondPage;
+        public RelayCommand CommandSecondPage => _CommandSecondPage ??
+            (_CommandSecondPage = new RelayCommand(() => {
+                _navigationService.NavigateToSecond();
+            }));
 
         private int _Count;
-
         public int Count {
             get {
                 return _Count;

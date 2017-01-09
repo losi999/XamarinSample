@@ -8,12 +8,12 @@
     <ProjectGuid>{3A39FAA9-7D43-4D1F-88EF-3EE810E9BDB9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XamarinSample.BackEnd</RootNamespace>
-    <AssemblyName>XamarinSample.BackEnd</AssemblyName>
+    <RootNamespace>XamarinSample.ViewModel</RootNamespace>
+    <AssemblyName>XamarinSample.ViewModel</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,6 +40,10 @@
     <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\XamarinSample.Common\XamarinSample.Common.csproj">
+      <Project>{A0CB5DD9-7D8B-4531-915D-6E2906CE52BA}</Project>
+      <Name>XamarinSample.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XamarinSample.Core\XamarinSample.Core.csproj">
       <Project>{84296155-5743-4C11-84BF-77F12F9FA531}</Project>
       <Name>XamarinSample.Core</Name>

@@ -5,19 +5,20 @@ using GalaSoft.MvvmLight.Helpers;
 using XamarinSample.Android.Activities;
 using GalaSoft.MvvmLight;
 using System;
-using XamarinSample.BackEnd.ViewModel;
+using XamarinSample.ViewModel;
 using System.Collections.Generic;
 using Android.Views;
+using XamarinSample.Core.ViewModel;
 
 namespace XamarinSample.Android.Activities {
     [Activity(Label = "XamarinSample", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : ActivityBase<MainViewModel> {
+    public class MainActivity : ActivityBase<IMainViewModel> {
 
         public Button buttonClick => FindViewById<Button>(Resource.Id.buttonClick);
         public Button buttonSecondPage => FindViewById<Button>(Resource.Id.buttonSecondPage);
         public TextView textViewCount => FindViewById<TextView>(Resource.Id.textViewCount);
 
-        protected override MainViewModel ViewModel => App.Locator.Main;
+        protected override IMainViewModel ViewModel => App.Locator.Main;
 
         protected override void OnCreate(Bundle bundle) {
             base.OnCreate(bundle);

@@ -14,8 +14,8 @@ using GalaSoft.MvvmLight.Ioc;
 using XamarinSample.Android.Activities;
 using XamarinSample.Core.Services;
 using XamarinSample.Android.Services;
-using XamarinSample.Persistence.Services;
-using XamarinSample.BackEnd.ViewModel;
+using XamarinSample.Common.Services;
+using XamarinSample.ViewModel;
 
 namespace XamarinSample.Android {
     public static class App {

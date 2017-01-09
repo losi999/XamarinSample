@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XamarinSample.BackEnd.ViewModel;
+using XamarinSample.ViewModel;
 using XamarinSample.Core.Services;
 using XamarinSample.Windows81.View;
 

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XamarinSample.BackEnd.ViewModel;
+using XamarinSample.ViewModel;
 using XamarinSample.Core.Services;
-using XamarinSample.WindowsPhone8.View;
+using XamarinSample.WindowsPhone81.View;
 
-namespace XamarinSample.WindowsPhone8.Services {
+namespace XamarinSample.WindowsPhone81.Services {
     public class NavigationService : GalaSoft.MvvmLight.Views.NavigationService, INavigationService {
 
         public NavigationService() {

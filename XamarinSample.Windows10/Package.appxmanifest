@@ -3,7 +3,7 @@
   <Identity Name="XamarinSample" Publisher="CN=Laszlo_Losonczi" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="4a134d75-164f-483d-a478-e3422b8d3092" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>XamarinSample.Windows</DisplayName>
+    <DisplayName>XamarinSample.Windows10</DisplayName>
     <PublisherDisplayName>Laszlo_Losonczi</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -14,8 +14,8 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="XamarinSample.Windows.App">
-      <uap:VisualElements DisplayName="XamarinSample.Windows" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="XamarinSample.Windows" BackgroundColor="transparent">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="XamarinSample.Windows10.App">
+      <uap:VisualElements DisplayName="XamarinSample.Windows10" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="XamarinSample.Windows10" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

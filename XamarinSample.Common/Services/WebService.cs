@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using XamarinSample.Core.Model.JsonModels;
 using XamarinSample.Core.Services;
 
-namespace XamarinSample.Persistence.Services {
+namespace XamarinSample.Common.Services {
     public class WebService : IWebService {
         public async Task<Rootobject> Get(string url) {
             HttpClient client = new HttpClient();

@@ -7,8 +7,8 @@
     <ProjectGuid>{4B2BF334-D7F3-432A-9463-004C02C29946}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XamarinSample.Windows</RootNamespace>
-    <AssemblyName>XamarinSample.Windows</AssemblyName>
+    <RootNamespace>XamarinSample.Windows10</RootNamespace>
+    <AssemblyName>XamarinSample.Windows10</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>

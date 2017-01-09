@@ -18,11 +18,11 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using XamarinSample.Core;
 using XamarinSample.Core.Services;
-using XamarinSample.Persistence.Services;
-using XamarinSample.Windows.Services;
-using XamarinSample.Windows.View;
+using XamarinSample.Common.Services;
+using XamarinSample.Windows10.Services;
+using XamarinSample.Windows10.View;
 
-namespace XamarinSample.Windows {
+namespace XamarinSample.Windows10 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>

@@ -17,13 +17,13 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using XamarinSample.Core.Services;
-using XamarinSample.Persistence.Services;
-using XamarinSample.WindowsPhone8.Services;
-using XamarinSample.WindowsPhone8.View;
+using XamarinSample.Common.Services;
+using XamarinSample.WindowsPhone81.Services;
+using XamarinSample.WindowsPhone81.View;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
-namespace XamarinSample.WindowsPhone8 {
+namespace XamarinSample.WindowsPhone81 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
