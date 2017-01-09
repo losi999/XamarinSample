@@ -22,7 +22,7 @@ namespace XamarinSample.Android.Activities {
 
         public Button buttonDialog => FindViewById<Button>(Resource.Id.buttonDialog);
         public Button buttonDownloadJson => FindViewById<Button>(Resource.Id.buttonDownloadJson);
-        public TextView textViewDialodResponse => FindViewById<TextView>(Resource.Id.textViewDialogResponse);
+        public TextView textViewDialogResponse => FindViewById<TextView>(Resource.Id.textViewDialogResponse);
         public ListView listViewRestaurants => FindViewById<ListView>(Resource.Id.listViewRestaurants);
 
         public ObservableAdapter<RestaurantItemModel> RestaurantsAdapter { get; private set; }
@@ -33,7 +33,7 @@ namespace XamarinSample.Android.Activities {
             RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.Second);
 
-            bindings.Add(this.SetBinding(() => ViewModel.DialogResponse, () => textViewDialodResponse.Text));
+            bindings.Add(this.SetBinding(() => ViewModel.DialogResponse, () => textViewDialogResponse.Text));
 
             buttonDialog.SetCommand(ViewModel.CommandDialog);
             buttonDownloadJson.SetCommand(ViewModel.CommandJson);
