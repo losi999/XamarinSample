@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Model\ItemModels\RestaurantItemModel.cs" />
     <Compile Include="Model\JsonModels\Models.cs" />
     <Compile Include="Services\IFileService.cs" />
     <Compile Include="Services\INavigationService.cs" />

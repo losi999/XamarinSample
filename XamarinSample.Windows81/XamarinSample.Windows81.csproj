@@ -161,17 +161,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XamarinSample.BackEnd\XamarinSample.BackEnd.csproj">
-      <Project>{3a39faa9-7d43-4d1f-88ef-3ee810e9bdb9}</Project>
-      <Name>XamarinSample.BackEnd</Name>
+    <ProjectReference Include="..\XamarinSample.Common\XamarinSample.Common.csproj">
+      <Project>{a0cb5dd9-7d8b-4531-915d-6e2906ce52ba}</Project>
+      <Name>XamarinSample.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\XamarinSample.Core\XamarinSample.Core.csproj">
       <Project>{84296155-5743-4c11-84bf-77f12f9fa531}</Project>
       <Name>XamarinSample.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XamarinSample.Persistence\XamarinSample.Persistence.csproj">
-      <Project>{a0cb5dd9-7d8b-4531-915d-6e2906ce52ba}</Project>
-      <Name>XamarinSample.Persistence</Name>
+    <ProjectReference Include="..\XamarinSample.ViewModel\XamarinSample.ViewModel.csproj">
+      <Project>{3a39faa9-7d43-4d1f-88ef-3ee810e9bdb9}</Project>
+      <Name>XamarinSample.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

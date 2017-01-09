@@ -91,6 +91,9 @@
     <AndroidResource Include="Resources\layout\Second.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\RestaurantRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -107,18 +110,21 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XamarinSample.BackEnd\XamarinSample.BackEnd.csproj">
-      <Project>{3A39FAA9-7D43-4D1F-88EF-3EE810E9BDB9}</Project>
-      <Name>XamarinSample.BackEnd</Name>
+    <ProjectReference Include="..\XamarinSample.Common\XamarinSample.Common.csproj">
+      <Project>{a0cb5dd9-7d8b-4531-915d-6e2906ce52ba}</Project>
+      <Name>XamarinSample.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\XamarinSample.Core\XamarinSample.Core.csproj">
       <Project>{84296155-5743-4c11-84bf-77f12f9fa531}</Project>
       <Name>XamarinSample.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XamarinSample.Persistence\XamarinSample.Persistence.csproj">
-      <Project>{A0CB5DD9-7D8B-4531-915D-6E2906CE52BA}</Project>
-      <Name>XamarinSample.Persistence</Name>
+    <ProjectReference Include="..\XamarinSample.ViewModel\XamarinSample.ViewModel.csproj">
+      <Project>{3a39faa9-7d43-4d1f-88ef-3ee810e9bdb9}</Project>
+      <Name>XamarinSample.ViewModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Adapters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

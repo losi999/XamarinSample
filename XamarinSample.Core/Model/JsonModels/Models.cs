@@ -8,7 +8,7 @@ namespace XamarinSample.Core.Model.JsonModels {
 
     public class Rootobject {
         public Menu[] menu { get; set; }
-        public Restaurant[] restaurants { get; set; }
+        public List<Restaurant> restaurants { get; set; }
         public string dayOfWeek { get; set; }
         public DateTime nextDay { get; set; }
         public DateTime prevDay { get; set; }
