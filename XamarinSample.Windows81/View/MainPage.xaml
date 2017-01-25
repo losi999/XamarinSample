@@ -11,14 +11,13 @@
     <StackPanel
         Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button
-            Command="{Binding CommandClick}"
-            Content="Click" />
-        <TextBlock
-            Text="Clicks" />
-        <TextBlock
-            Text="{Binding Count}" />
+            Command="{Binding CommandDialogsPage}"
+            Content="Go to dialogs page" />
         <Button
-            Content="Second Page"
-            Command="{Binding CommandSecondPage}" />
+            Command="{Binding CommandSettingsPage}"
+            Content="Go to settings page" />
+        <Button
+            Command="{Binding CommandPersonsPage}"
+            Content="Go to persons page" />
     </StackPanel>
 </Page>

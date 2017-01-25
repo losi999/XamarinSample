@@ -15,31 +15,40 @@ namespace XamarinSample.iOS.ViewControllers
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton buttonClick { get; set; }
+        UIKit.UIButton buttonDialogs { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton buttonSecondPage { get; set; }
+        UIKit.UIButton buttonMap { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel labelCount { get; set; }
+        UIKit.UIButton buttonPersons { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton buttonSettings { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (buttonClick != null) {
-                buttonClick.Dispose ();
-                buttonClick = null;
+            if (buttonDialogs != null) {
+                buttonDialogs.Dispose ();
+                buttonDialogs = null;
             }
 
-            if (buttonSecondPage != null) {
-                buttonSecondPage.Dispose ();
-                buttonSecondPage = null;
+            if (buttonMap != null) {
+                buttonMap.Dispose ();
+                buttonMap = null;
             }
 
-            if (labelCount != null) {
-                labelCount.Dispose ();
-                labelCount = null;
+            if (buttonPersons != null) {
+                buttonPersons.Dispose ();
+                buttonPersons = null;
+            }
+
+            if (buttonSettings != null) {
+                buttonSettings.Dispose ();
+                buttonSettings = null;
             }
         }
     }

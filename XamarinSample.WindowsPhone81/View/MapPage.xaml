@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="XamarinSample.WindowsPhone81.View.MapPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.WindowsPhone81.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Map, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button
+            Content="Get current location"
+            Command="{Binding CommandGetCurrentPosition}" />
+        <Button
+            Content="Get points in the area"
+            IsEnabled="{Binding IsAreaButtonEnabled}"
+            Command="{Binding CommandGetPointsInArea}" />
+        <Button
+            Content="Get directions"
+            IsEnabled="{Binding IsAreaButtonEnabled}"
+            Command="{Binding CommandGetDirections}" />
+        <Button
+            Content="Open maps application"
+            IsEnabled="{Binding IsAreaButtonEnabled}"
+            Command="{Binding CommandOpenMapsApp}" />
+    </StackPanel>
+</Page>

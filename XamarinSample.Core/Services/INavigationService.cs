@@ -7,6 +7,17 @@ using System.Threading.Tasks;
 
 namespace XamarinSample.Core.Services {
     public interface INavigationService : GalaSoft.MvvmLight.Views.INavigationService {
-        void NavigateToSecond(params object[] parameters);
+        void NavigateToDialogsPage();
+        void NavigateToSettingsPage();
+        void NavigateToPersonsPage();
+        void NavigateBackToPersonsPage();
+        void NavigateToPersonRequiredPage();
+        void NavigateToPersonOptionalPage();
+        void NavigateToPersonSummaryPage();
+        void NavigateToPersonListPage();
+        void NavigateToMapPage();
+        void NavigateToPersonDetailsPage();
+        void NavigateToLogInPage();
+        void NavigateToSignUpPage();
     }
 }

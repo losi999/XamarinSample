@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="XamarinSample.WindowsPhone81.View.PersonOptionalPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.WindowsPhone81.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding PersonOptional, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox
+            Header="Address"
+            Text="{Binding Address, Mode=TwoWay}" />
+        <TextBox
+            Header="E-mail"
+            Text="{Binding EMail, Mode=TwoWay}"
+            InputScope="EmailSmtpAddress" />
+        <TextBox
+            Header="Phone number"
+            Text="{Binding PhoneNumber, Mode=TwoWay}"
+            InputScope="TelephoneNumber" />
+        <Image
+            Height="200"
+            Width="200"
+            Source="{Binding PhotoPath}" />
+        <Button
+            Content="Take photo"
+            Command="{Binding CommandTakePhoto}" />
+        <Button
+            Content="Next"
+            Command="{Binding CommandNext}" />
+    </StackPanel>
+</Page>

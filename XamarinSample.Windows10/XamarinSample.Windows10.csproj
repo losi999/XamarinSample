@@ -95,14 +95,57 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\AnchorPointConverter.cs" />
+    <Compile Include="Converters\BooleanToInverseBooleanConverter.cs" />
+    <Compile Include="Converters\BooleanToInverseVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\CheckBoxValueSampleConverter.cs" />
+    <Compile Include="Converters\CoordinateToGeopointConverter.cs" />
+    <Compile Include="Converters\GenderToBooleanConverter.cs" />
+    <Compile Include="Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="Converters\SwitchValueSampleConverter.cs" />
+    <Compile Include="Services\ApplicationSettingsService.cs" />
     <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\LauncherService.cs" />
+    <Compile Include="Services\MapService.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="View\DialogsPage.xaml.cs">
+      <DependentUpon>DialogsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogInPage.xaml.cs">
+      <DependentUpon>LogInPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\SecondPage.xaml.cs">
-      <DependentUpon>SecondPage.xaml</DependentUpon>
+    <Compile Include="View\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonDetailsPage.xaml.cs">
+      <DependentUpon>PersonDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonListPage.xaml.cs">
+      <DependentUpon>PersonListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonOptionalPage.xaml.cs">
+      <DependentUpon>PersonOptionalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonRequiredPage.xaml.cs">
+      <DependentUpon>PersonRequiredPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonsPage.xaml.cs">
+      <DependentUpon>PersonsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonSummaryPage.xaml.cs">
+      <DependentUpon>PersonSummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +155,8 @@
     <None Include="XamarinSample.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BluePin.png" />
+    <Content Include="Assets\GreyPin.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -126,11 +171,61 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Resources\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="View\DialogsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LogInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SecondPage.xaml">
+    <Page Include="View\MapPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PersonDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PersonListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PersonOptionalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PersonRequiredPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PersonsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PersonSummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,12 +239,20 @@
       <Project>{84296155-5743-4c11-84bf-77f12f9fa531}</Project>
       <Name>XamarinSample.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XamarinSample.DesignViewModel\XamarinSample.DesignViewModel.csproj">
+      <Project>{c62f3a3c-e2f3-48bc-baf8-1f470840dc66}</Project>
+      <Name>XamarinSample.DesignViewModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XamarinSample.ViewModel\XamarinSample.ViewModel.csproj">
       <Project>{3a39faa9-7d43-4d1f-88ef-3ee810e9bdb9}</Project>
       <Name>XamarinSample.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

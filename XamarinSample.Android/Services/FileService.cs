@@ -13,6 +13,15 @@ using System;
 
 namespace XamarinSample.Android.Services {
     public class FileService : IFileService {
+        public Task<string> Copy(string source, string destination) {
+            throw new NotImplementedException();
+        }
+
+        public async Task Delete(string photoPath) {
+            var file = new Java.IO.File(photoPath);
+            file.Delete();
+        }
+
         public Task Write(string fileName, string content) {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string settingsPath = Path.Combine(path, fileName);

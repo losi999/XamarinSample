@@ -11,25 +11,28 @@ using Android.Views;
 using XamarinSample.Core.ViewModel;
 
 namespace XamarinSample.Android.Activities {
+
     [Activity(Label = "XamarinSample", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : ActivityBase<IMainViewModel> {
 
-        public Button buttonClick => FindViewById<Button>(Resource.Id.buttonClick);
-        public Button buttonSecondPage => FindViewById<Button>(Resource.Id.buttonSecondPage);
-        public TextView textViewCount => FindViewById<TextView>(Resource.Id.textViewCount);
+        private Button buttonDialogs => FindViewById<Button>(Resource.Id.buttonDialogs);
+        private Button buttonPersons => FindViewById<Button>(Resource.Id.buttonPersons);
+        private Button buttonSettings => FindViewById<Button>(Resource.Id.buttonSettings);
+        private Button buttonMap => FindViewById<Button>(Resource.Id.buttonMap);
 
         protected override IMainViewModel ViewModel => App.Locator.Main;
 
         protected override void OnCreate(Bundle bundle) {
+
             base.OnCreate(bundle);
 
-            RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.Main);
 
-            buttonClick.SetCommand(ViewModel.CommandClick);
-            buttonSecondPage.SetCommand(ViewModel.CommandSecondPage);
+            buttonDialogs.SetCommand(ViewModel.CommandDialogsPage);
+            buttonPersons.SetCommand(ViewModel.CommandPersonsPage);
+            buttonSettings.SetCommand(ViewModel.CommandSettingsPage);
+            buttonMap.SetCommand(ViewModel.CommandMapPage);
 
-            bindings.Add(this.SetBinding(() => ViewModel.Count, () => textViewCount.Text));
         }
 
     }

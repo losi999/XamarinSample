@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="XamarinSample.Windows81.View.PersonOptionalPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.Windows81.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding PersonOptional, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button
+            Content="BACK"
+            Command="{Binding CommandBackPressed}" />
+        <TextBox
+            Header="Address"
+            Text="{Binding Address, Mode=TwoWay}" />
+        <TextBox
+            Header="E-mail"
+            Text="{Binding EMail, Mode=TwoWay}"
+            InputScope="EmailSmtpAddress" />
+        <Button
+            Content="Next"
+            Command="{Binding CommandNext}" />
+    </StackPanel>
+</Page>

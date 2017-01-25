@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="XamarinSample.Windows81.View.PersonRequiredPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.Windows81.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:XamarinSample.Windows81.Converters"
+    mc:Ignorable="d"
+    DataContext="{Binding PersonRequired, Source={StaticResource Locator}}">
+
+    <Page.Resources>
+        <converters:GenderToBooleanConverter
+            x:Name="GenderToBooleanConverter" />
+    </Page.Resources>
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button
+            Content="BACK"
+            Command="{Binding CommandBackPressed}" />
+        <TextBox
+            Header="First name"
+            Text="{Binding FirstName, Mode=TwoWay}" />
+        <TextBox
+            Header="Last name"
+            Text="{Binding LastName, Mode=TwoWay}" />
+        <RadioButton
+            Content="Male"
+            IsChecked="{Binding Gender, Mode=TwoWay, Converter={StaticResource GenderToBooleanConverter},ConverterParameter=Male }" />
+        <RadioButton
+            Content="Female"
+            IsChecked="{Binding Gender, Mode=TwoWay, Converter={StaticResource GenderToBooleanConverter},ConverterParameter=Female }" />
+        <TextBox
+            Header="Age"
+            Text="{Binding Age, Mode=TwoWay}"
+            InputScope="Number" />
+        <PasswordBox
+            Header="Password"
+            Password="{Binding Password, Mode=TwoWay}" />
+        <PasswordBox
+            Header="Confirm password"
+            Password="{Binding PasswordConfirm, Mode=TwoWay}" />
+        <Button
+            Content="Next"
+            Command="{Binding CommandNext}" />
+    </StackPanel>
+</Page>

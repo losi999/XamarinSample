@@ -12,36 +12,45 @@ using XamarinSample.Core.ViewModel;
 namespace XamarinSample.ViewModel {
     public class MainViewModel : ViewModelBase, IMainViewModel {
 
-        private readonly INavigationService _navigationService;
+        private readonly INavigationService _navigation;
 
-        public MainViewModel(INavigationService navigationService) {
-            _navigationService = navigationService;
+        public MainViewModel(INavigationService navigation) {
+            _navigation = navigation;
         }
 
-
-        private RelayCommand _CommandClick;
-        public RelayCommand CommandClick => _CommandClick ??
-            (_CommandClick = new RelayCommand(() => {
-                Count++;
+        private RelayCommand _CommandBackPressed;
+        public RelayCommand CommandBackPressed => _CommandBackPressed ??
+            (_CommandBackPressed = new RelayCommand(() => {
             }));
 
-        private RelayCommand _CommandSecondPage;
-        public RelayCommand CommandSecondPage => _CommandSecondPage ??
-            (_CommandSecondPage = new RelayCommand(() => {
-                _navigationService.NavigateToSecond();
+        private RelayCommand _CommandMapPage;
+        public RelayCommand CommandMapPage => _CommandMapPage ??
+            (_CommandMapPage = new RelayCommand(() => {
+                _navigation.NavigateToMapPage();
             }));
 
-        private int _Count;
-        public int Count {
-            get {
-                return _Count;
-            }
-            set {
-                if (_Count != value) {
-                    _Count = value;
-                    RaisePropertyChanged(nameof(Count));
-                }
-            }
-        }
+        private RelayCommand _CommandDialogsPage;
+        public RelayCommand CommandDialogsPage => _CommandDialogsPage ??
+            (_CommandDialogsPage = new RelayCommand(() => {
+                _navigation.NavigateToDialogsPage();
+            }));
+
+        private RelayCommand _CommandSettingsPage;
+        public RelayCommand CommandSettingsPage => _CommandSettingsPage ??
+            (_CommandSettingsPage = new RelayCommand(() => {
+                _navigation.NavigateToSettingsPage();
+            }));
+
+        private RelayCommand _CommandPersonsPage;
+        public RelayCommand CommandPersonsPage => _CommandPersonsPage ??
+            (_CommandPersonsPage = new RelayCommand(() => {
+                _navigation.NavigateToPersonsPage();
+            }));
+
+        private RelayCommand _CommandLoginPage;
+        public RelayCommand CommandLoginPage => _CommandLoginPage ??
+            (_CommandLoginPage = new RelayCommand(() => {
+                _navigation.NavigateToLogInPage();
+            }));
     }
 }

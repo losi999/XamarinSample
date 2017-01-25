@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="XamarinSample.Windows81.View.PersonSummaryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.Windows81.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding PersonSummary, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button
+            Content="BACK"
+            Command="{Binding CommandBackPressed}" />
+        <TextBlock
+            Text="{Binding SummaryText}"
+            TextWrapping="Wrap" />
+        <TextBlock
+            Text="Enter your password and click save!" />
+        <PasswordBox
+            Header="Password"
+            Password="{Binding Password, Mode=TwoWay}" />
+        <Button
+            Content="Save"
+            Command="{Binding CommandSave}" />
+    </StackPanel>
+</Page>

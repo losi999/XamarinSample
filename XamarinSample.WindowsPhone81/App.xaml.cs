@@ -20,6 +20,8 @@ using XamarinSample.Core.Services;
 using XamarinSample.Common.Services;
 using XamarinSample.WindowsPhone81.Services;
 using XamarinSample.WindowsPhone81.View;
+using GS = GalaSoft.MvvmLight.Views;
+using Windows.Phone.UI.Input;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -41,10 +43,13 @@ namespace XamarinSample.WindowsPhone81 {
         }
 
         public void RegisterServices() {
-            SimpleIoc.Default.Register<INavigationService>(() => new NavigationService());
-            SimpleIoc.Default.Register<GalaSoft.MvvmLight.Views.IDialogService>(() => new GalaSoft.MvvmLight.Views.DialogService());
-            SimpleIoc.Default.Register<IWebService>(() => new WebService());
-            SimpleIoc.Default.Register<IFileService>(() => new FileService());
+            SimpleIoc.Default.Register<GS.NavigationService>();
+            SimpleIoc.Default.Register<INavigationService, NavigationService>();
+            SimpleIoc.Default.Register<GS.IDialogService, GS.DialogService>();
+            SimpleIoc.Default.Register<IWebService, WebService>();
+            SimpleIoc.Default.Register<IFileService, FileService>();
+            SimpleIoc.Default.Register<IApplicationSettingsService, ApplicationSettingsService>();
+            SimpleIoc.Default.Register<ILauncherService, LauncherService>();
         }
 
         /// <summary>
@@ -56,7 +61,7 @@ namespace XamarinSample.WindowsPhone81 {
         protected override void OnLaunched(LaunchActivatedEventArgs e) {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached) {
-                this.DebugSettings.EnableFrameRateCounter = true;
+                this.DebugSettings.EnableFrameRateCounter = false;
             }
 #endif
 
@@ -80,6 +85,7 @@ namespace XamarinSample.WindowsPhone81 {
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+                HardwareButtons.BackPressed += OnBackRequested;
             }
 
             if (rootFrame.Content == null) {
@@ -104,6 +110,15 @@ namespace XamarinSample.WindowsPhone81 {
 
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        private void OnBackRequested(object sender, BackPressedEventArgs e) {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame.CanGoBack && !(rootFrame.Content is MainPage)) {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
         }
 
         /// <summary>

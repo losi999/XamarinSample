@@ -19,6 +19,7 @@ using XamarinSample.Core.Services;
 using XamarinSample.Common.Services;
 using XamarinSample.Windows81.Services;
 using XamarinSample.Windows81.View;
+using GS = GalaSoft.MvvmLight.Views;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -38,10 +39,13 @@ namespace XamarinSample.Windows81 {
         }
 
         public void RegisterServices() {
-            SimpleIoc.Default.Register<INavigationService>(() => new NavigationService());
-            SimpleIoc.Default.Register<GalaSoft.MvvmLight.Views.IDialogService>(() => new GalaSoft.MvvmLight.Views.DialogService());
-            SimpleIoc.Default.Register<IWebService>(() => new WebService());
-            SimpleIoc.Default.Register<IFileService>(() => new FileService());
+            SimpleIoc.Default.Register<GS.NavigationService>();
+            SimpleIoc.Default.Register<INavigationService, NavigationService>();
+            SimpleIoc.Default.Register<GS.IDialogService, GS.DialogService>();
+            SimpleIoc.Default.Register<IWebService, WebService>();
+            SimpleIoc.Default.Register<IFileService, FileService>();
+            SimpleIoc.Default.Register<IApplicationSettingsService, ApplicationSettingsService>();
+            SimpleIoc.Default.Register<ILauncherService, LauncherService>();
         }
 
         /// <summary>
@@ -53,7 +57,7 @@ namespace XamarinSample.Windows81 {
 
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached) {
-                this.DebugSettings.EnableFrameRateCounter = true;
+                this.DebugSettings.EnableFrameRateCounter = false;
             }
 #endif
 

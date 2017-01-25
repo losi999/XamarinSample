@@ -1,0 +1,114 @@
+﻿<Page
+    x:Class="XamarinSample.Windows10.View.MapPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.Windows10.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:converters="using:XamarinSample.Windows10.Converters"
+    mc:Ignorable="d"
+    DataContext="{Binding Map, Source={StaticResource Locator}}">
+
+    <Page.Resources>
+        <converters:AnchorPointConverter
+            x:Name="AnchorPointConverter" />
+        <converters:CoordinateToGeopointConverter
+            x:Name="CoordinateToGeopointConverter" />
+    </Page.Resources>
+
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior
+            EventName="Loaded">
+            <core:EventTriggerBehavior.Actions>
+                <core:InvokeCommandAction
+                    Command="{Binding CommandLoaded}" />
+            </core:EventTriggerBehavior.Actions>
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <maps:MapControl
+            x:Name="map"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Height="300"
+            ZoomLevel="15">
+            <maps:MapItemsControl
+                ItemsSource="{Binding CurrentCoordinate}">
+                <maps:MapItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image
+                                Width="26"
+                                Height="50"
+                                maps:MapControl.NormalizedAnchorPoint="{Binding AnchorPoint , Converter={StaticResource AnchorPointConverter}}"
+                                maps:MapControl.Location="{Binding Coordinate, Converter={StaticResource CoordinateToGeopointConverter}}"
+                                Source="{StaticResource ImageBluePin}" />
+                        </Grid>
+                    </DataTemplate>
+                </maps:MapItemsControl.ItemTemplate>
+            </maps:MapItemsControl>
+            <maps:MapItemsControl
+                ItemsSource="{Binding AreaCoordinates}">
+                <maps:MapItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+                                    Height="Auto" />
+                                <RowDefinition
+                                    Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Border
+                                Visibility="{Binding IsBubbleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                Background="White"
+                                CornerRadius="5"
+                                BorderBrush="Black">
+                                <TextBlock
+                                    Text="{Binding Title}"
+                                    Margin="7" />
+                            </Border>
+                            <Image
+                                Grid.Row="1"
+                                Width="26"
+                                Height="50"
+                                maps:MapControl.NormalizedAnchorPoint="{Binding AnchorPoint , Converter={StaticResource AnchorPointConverter}}"
+                                maps:MapControl.Location="{Binding Coordinate, Converter={StaticResource CoordinateToGeopointConverter}}"
+                                Source="{StaticResource ImageGreyPin}">
+                                <!--<i:Interaction.Behaviors>
+                                    <core:EventTriggerBehavior
+                                        EventName="Tapped">
+                                        <core:EventTriggerBehavior.Actions>
+                                            <core:InvokeCommandAction
+                                                Command="{Binding DataContext.CommandPinImageTap, ElementName=control}"
+                                                CommandParameter="{Binding Id}" />
+                                        </core:EventTriggerBehavior.Actions>
+                                    </core:EventTriggerBehavior>
+                                </i:Interaction.Behaviors>-->
+                            </Image>
+                        </Grid>
+                    </DataTemplate>
+                </maps:MapItemsControl.ItemTemplate>
+            </maps:MapItemsControl>
+        </maps:MapControl>
+        <Button
+            Content="Get current location"
+            Command="{Binding CommandGetCurrentPosition}" />
+        <Button
+            Content="Get points in the area"
+            IsEnabled="{Binding IsAreaButtonEnabled}"
+            Command="{Binding CommandGetPointsInArea}" />
+        <Button
+            Content="Get directions"
+            IsEnabled="{Binding IsAreaButtonEnabled}"
+            Command="{Binding CommandGetDirections}" />
+        <Button
+            Content="Open maps application"
+            IsEnabled="{Binding IsAreaButtonEnabled}"
+            Command="{Binding CommandOpenMapsApp}" />
+    </StackPanel>
+</Page>

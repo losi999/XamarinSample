@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="XamarinSample.WindowsPhone81.View.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.WindowsPhone81.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:XamarinSample.WindowsPhone81.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Settings, Source={StaticResource Locator}}">
+    <Page.Resources>
+        <converters:CheckBoxValueSampleConverter
+            x:Name="CheckBoxValueSampleConverter" />
+        <converters:SwitchValueSampleConverter
+            x:Name="SwitchValueSampleConverter" />
+    </Page.Resources>
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <CheckBox
+            IsChecked="{Binding IsCheckBoxChecked, Mode=TwoWay}"
+            Content="Check me!" />
+        <TextBlock
+            Text="{Binding IsCheckBoxChecked, Converter={StaticResource CheckBoxValueSampleConverter}}" />
+        <Slider
+            Value="{Binding BarValue, Mode=TwoWay}"
+            Maximum="10"
+            LargeChange="1" />
+        <TextBlock>
+            <Run
+                Text="Slider value: " />
+            <Run
+                Text="{Binding BarValue}" />
+        </TextBlock>
+        <ToggleSwitch
+            IsOn="{Binding IsSwitchChecked, Mode=TwoWay}" />
+        <TextBlock
+            Text="{Binding IsSwitchChecked, Converter={StaticResource SwitchValueSampleConverter}}" />
+        <ComboBox
+            ItemsSource="{Binding Items}"
+            SelectedIndex="{Binding SelectedItemIndex, Mode=TwoWay}" />
+        <TextBlock
+            Text="{Binding SelectedItem}" />
+    </StackPanel>
+</Page>

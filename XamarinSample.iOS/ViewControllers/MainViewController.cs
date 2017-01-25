@@ -15,19 +15,18 @@ namespace XamarinSample.iOS.ViewControllers {
         }
 
         public override void DidReceiveMemoryWarning() {
-            // Releases the view if it doesn't have a superview.
             base.DidReceiveMemoryWarning();
 
-            // Release any cached data, images, etc that aren't in use.
         }
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 
-            buttonClick.SetCommand(nameof(buttonClick.TouchUpInside), ViewModel.CommandClick);
-            buttonSecondPage.SetCommand(nameof(buttonSecondPage.TouchUpInside), ViewModel.CommandSecondPage);
+            buttonDialogs.SetCommand(ViewModel.CommandDialogsPage);
+            buttonPersons.SetCommand(ViewModel.CommandPersonsPage);
+            buttonSettings.SetCommand(ViewModel.CommandSettingsPage);
+            buttonMap.SetCommand(ViewModel.CommandMapPage);
 
-            bindings.Add(this.SetBinding(() => ViewModel.Count, () => labelCount.Text));
         }
     }
 }

@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="XamarinSample.Windows10.View.SignUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.Windows10.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding SignUp, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox
+            IsEnabled="{Binding IsInProgress, Converter={StaticResource BooleanToInverseBooleanConverter}}"
+            Text="{Binding Username, Mode=TwoWay}"
+            Header="Username" />
+        <PasswordBox
+            IsEnabled="{Binding IsInProgress, Converter={StaticResource BooleanToInverseBooleanConverter}}"
+            Password="{Binding Password, Mode=TwoWay}"
+            Header="Password" />
+        <PasswordBox
+            IsEnabled="{Binding IsInProgress, Converter={StaticResource BooleanToInverseBooleanConverter}}"
+            Password="{Binding PasswordConfirm, Mode=TwoWay}"
+            Header="Password confirm" />
+        <ProgressBar
+            Visibility="{Binding IsInProgress, Converter={StaticResource BooleanToVisibilityConverter}}"
+            Background="Transparent"
+            IsIndeterminate="True"
+            Height="20" />
+        <Button
+            Visibility="{Binding IsInProgress, Converter={StaticResource BooleanToInverseVisibilityConverter}}"
+            Command="{Binding CommandSignUp}"
+            Content="Sign up" />
+    </StackPanel>
+</Page>

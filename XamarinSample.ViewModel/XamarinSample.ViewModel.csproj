@@ -34,16 +34,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DialogsViewModel.cs" />
+    <Compile Include="LogInViewModel.cs" />
+    <Compile Include="MapViewModel.cs" />
+    <Compile Include="PersonDetailsViewModel.cs" />
+    <Compile Include="PersonListViewModel.cs" />
+    <Compile Include="PersonSummaryViewModel.cs" />
+    <Compile Include="PersonOptionalViewModel.cs" />
+    <Compile Include="PersonRequiredViewModel.cs" />
+    <Compile Include="PersonsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainViewModel.cs" />
-    <Compile Include="SecondViewModel.cs" />
-    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="SettingsViewModel.cs" />
+    <Compile Include="SignUpViewModel.cs" />
+    <Compile Include="ViewModelLocatorBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XamarinSample.Common\XamarinSample.Common.csproj">
-      <Project>{A0CB5DD9-7D8B-4531-915D-6E2906CE52BA}</Project>
-      <Name>XamarinSample.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XamarinSample.Core\XamarinSample.Core.csproj">
       <Project>{84296155-5743-4C11-84BF-77F12F9FA531}</Project>
       <Name>XamarinSample.Core</Name>

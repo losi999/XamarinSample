@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="XamarinSample.Windows81.View.DialogsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.Windows81.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Dialogs, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button
+            Content="BACK"
+            Command="{Binding CommandBackPressed}" />
+        <Button
+            Content="Dialog Ok Button"
+            Command="{Binding CommandDialogOkButton}" />
+        <Button
+            Content="Dialog Custom Button"
+            Command="{Binding CommandDialogCustomButton}" />
+        <Button
+            Content="Dialog Custom Two Button"
+            Command="{Binding CommandDialogCustomTwoButton}" />
+        <TextBlock
+            Text="{Binding TwoButtonResponse}" />
+        <Button
+            Content="Dialog Custom Button Error"
+            Command="{Binding CommandDialogCustomButtonError}" />
+        <Button
+            Content="Dialog Custom Button Exception"
+            Command="{Binding CommandDialogCustomButtonException}" />
+
+    </StackPanel>
+</Page>

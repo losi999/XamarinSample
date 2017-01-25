@@ -21,6 +21,7 @@ using XamarinSample.Core.Services;
 using XamarinSample.Common.Services;
 using XamarinSample.Windows10.Services;
 using XamarinSample.Windows10.View;
+using GS = GalaSoft.MvvmLight.Views;
 
 namespace XamarinSample.Windows10 {
     /// <summary>
@@ -35,14 +36,6 @@ namespace XamarinSample.Windows10 {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            RegisterServices();
-        }
-
-        public void RegisterServices() {
-            SimpleIoc.Default.Register<INavigationService>(() => new NavigationService());
-            SimpleIoc.Default.Register<GalaSoft.MvvmLight.Views.IDialogService>(() => new GalaSoft.MvvmLight.Views.DialogService());
-            SimpleIoc.Default.Register<IWebService>(() => new WebService());
-            SimpleIoc.Default.Register<IFileService>(() => new FileService());
         }
 
         /// <summary>
@@ -92,6 +85,8 @@ namespace XamarinSample.Windows10 {
                 AppViewBackButtonVisibility.Visible :
                 AppViewBackButtonVisibility.Collapsed;
         }
+
+
 
         private void OnBackRequested(object sender, BackRequestedEventArgs e) {
             Frame rootFrame = Window.Current.Content as Frame;

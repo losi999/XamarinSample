@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="XamarinSample.Windows10.View.PersonDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamarinSample.Windows10.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding PersonDetails, Source={StaticResource Locator}}">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel
+            Orientation="Horizontal">
+            <TextBlock
+                Text="Name: " />
+            <TextBlock
+                Text="{Binding Name}" />
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal">
+            <TextBlock
+                Text="Age: " />
+            <TextBlock
+                Text="{Binding Age}" />
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal">
+            <TextBlock
+                Text="Gender: " />
+            <TextBlock
+                Text="{Binding Gender}" />
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal"
+            Visibility="{Binding Address, Converter={StaticResource StringToVisibilityConverter}}">
+            <TextBlock
+                Text="Address: " />
+            <TextBlock
+                Text="{Binding Address}" />
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal"
+            Visibility="{Binding EMail, Converter={StaticResource StringToVisibilityConverter}}">
+            <TextBlock
+                Text="E-mail: " />
+            <TextBlock
+                Text="{Binding EMail}" />
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal"
+            Visibility="{Binding PhoneNumber, Converter={StaticResource StringToVisibilityConverter}}">
+            <TextBlock
+                Text="Phone: " />
+            <TextBlock
+                Text="{Binding PhoneNumber}" />
+        </StackPanel>
+        <Image
+            Source="{Binding PhotoPath}"
+            Height="200"
+            Width="200"
+            HorizontalAlignment="Left" />
+        <Button
+            Content="Delete person"
+            Command="{Binding CommandDeletePerson}"
+            Margin="0,20" />
+        <Button
+            Visibility="{Binding EMail, Converter={StaticResource StringToVisibilityConverter}}"
+            Content="Send E-mail"
+            Command="{Binding CommandSendEMail}" />
+        <Button
+            Visibility="{Binding PhoneNumber, Converter={StaticResource StringToVisibilityConverter}}"
+            Content="Dial phone number"
+            Command="{Binding CommandDial}" />
+        <Button
+            Visibility="{Binding Address, Converter={StaticResource StringToVisibilityConverter}}"
+            Content="Show address on map"
+            Command="{Binding CommandShowOnMap}" />
+    </StackPanel>
+</Page>

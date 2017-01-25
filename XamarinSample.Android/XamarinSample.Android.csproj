@@ -69,6 +69,10 @@
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -76,22 +80,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\ActivityBase.cs" />
+    <Compile Include="Activities\DialogsActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
-    <Compile Include="Activities\SecondActivity.cs" />
+    <Compile Include="Activities\MapActivity.cs" />
+    <Compile Include="Activities\PersonDetailsActivity.cs" />
+    <Compile Include="Activities\PersonListActivity.cs" />
+    <Compile Include="Activities\PersonOptionalActivity.cs" />
+    <Compile Include="Activities\PersonsActivity.cs" />
+    <Compile Include="Activities\PersonSummaryActivity.cs" />
+    <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="Activities\PersonRequiredActivity.cs" />
+    <Compile Include="Converters\BooleanToFemaleConverter.cs" />
+    <Compile Include="Converters\BooleanToMaleConverter.cs" />
+    <Compile Include="Converters\StringToIntConverter.cs" />
+    <Compile Include="Converters\StringToVisibilityConverter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ApplicationSettingsService.cs" />
     <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\LauncherService.cs" />
+    <Compile Include="Services\MapService.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\Second.axml">
+    <AndroidResource Include="Resources\layout\Dialogs.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\RestaurantRow.axml">
+    <AndroidResource Include="Resources\layout\Settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Persons.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SimpleSpinnerItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PersonRequired.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PersonOptional.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PersonSummary.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PersonList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PersonListRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Map.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PersonDetails.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -123,9 +170,7 @@
       <Name>XamarinSample.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Adapters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

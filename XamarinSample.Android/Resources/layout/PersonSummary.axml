@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewSummary" />
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:id="@+id/imageViewPhotoPreview" />
+    <TextView
+        android:text="Enter your password and click save!"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextPassword"
+        android:hint="Password" />
+    <Button
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonSave" />
+</LinearLayout>

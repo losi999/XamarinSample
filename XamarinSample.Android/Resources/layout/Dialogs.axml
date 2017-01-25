@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:text="Dialog Ok Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDialogOkButton" />
+    <Button
+        android:text="Dialog Custom Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDialogCustomButton" />
+    <Button
+        android:text="Dialog Custom Two Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDialogCustomTwoButton" />
+    <TextView
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTwoButtonResponse" />
+    <Button
+        android:text="Dialog Custom Button Error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDialogCustomButtonError" />
+    <Button
+        android:text="Dialog Custom Button Exception"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDialogCustomButtonException" />
+</LinearLayout>
